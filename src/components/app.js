@@ -15,7 +15,7 @@ class App {
         const resultsBox = document.createElement("div")
         resultsBox.setAttribute("id", "results-box")
         this.mainContainer.appendChild(resultsBox)
-        console.log(this.valueExtractor(inputArg))
+        resultsBox.innerText = this.valueExtractor(inputArg)
     }
     valueExtractor = (input) => {
         let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
