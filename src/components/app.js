@@ -3,6 +3,9 @@ class App {
         this.initBindingsAndEventListeners()
     }
 
+    initBindingsAndEventListeners(){
+        this.inputBox = document.querySelector("#input-box")
+    }
     /**const  valueExtractor = (input) => {
   let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
   let arr1 = stringBlob.split('},')
