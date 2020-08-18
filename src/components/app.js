@@ -10,27 +10,29 @@ class App {
     }
 
     handleSubmit(e){
-        const input =  this.mainContainer.children[0]
-        const inputArg = input.value
+        const input =  this.mainContainer.children[0].value
+        // const inputArg = input.value
         const resultsBox = document.createElement("div")
         resultsBox.setAttribute("id", "results-box")
         this.mainContainer.appendChild(resultsBox)
-        let valueTable = document.createElement("table")
+        debugger
+        this.valueExtractor2(input)
+        // let valueTable = document.createElement("table")
         
-        valueTable.setAttribute("id", "value-table")
-        let row = valueTable.insertRow()
-        let perRow = 1
-        let count = 0
-        let resultsArr= this.valueExtractor(inputArg)
-        for (let i = 0; i<resultsArr.length; i++){
-            let cell = row.insertCell()
-            cell.innerHTML= resultsArr[i]
-            count ++
-            if (count%perRow == 0) {
-                row = valueTable.insertRow()
-            }
-        }
-        this.mainContainer.appendChild(valueTable)
+        // valueTable.setAttribute("id", "value-table")
+        // let row = valueTable.insertRow()
+        // let perRow = 1
+        // let count = 0
+        // let resultsArr= this.valueExtractor(inputArg)
+        // for (let i = 0; i<resultsArr.length; i++){
+        //     let cell = row.insertCell()
+        //     cell.innerHTML= resultsArr[i]
+        //     count ++
+        //     if (count%perRow == 0) {
+        //         row = valueTable.insertRow()
+        //     }
+        // }
+        // this.mainContainer.appendChild(valueTable)
         // resultsBox.innerText = this.valueExtractor(inputArg)
 
     }
@@ -46,4 +48,10 @@ class App {
         arr1=[]
         return values
         }
+
+    valueExtractor2 = (input) => {
+        let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
+        stringBlob = stringBlob.split('},')
+        console.log(stringBlob)
+    }
     }
