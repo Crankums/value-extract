@@ -15,7 +15,6 @@ class App {
         resultsBox.setAttribute("id", "results-box")
         this.mainContainer.appendChild(resultsBox)        
         let valueTable = document.createElement("table")
-        
         valueTable.setAttribute("id", "value-table")
         let row = valueTable.insertRow()
         let perRow = 1
@@ -30,21 +29,8 @@ class App {
             }
         }
         this.mainContainer.appendChild(valueTable)
-        // resultsBox.innerText = this.valueExtractor(inputArg)
-
     }
-    // valueExtractor = (input) => {
-    //     let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
-    //     let arr1 = stringBlob.split('},')
-    //     let arr2 = arr1.map(e => e.endsWith(']') ? e+"}" : e)
-    //     let arrParse = arr2.map(JSON.parse)
-    //     let values = []
-    //     for (let el in arrParse){
-    //     values.push(arrParse[el]['__pk'][1])}
-    //     arr2=[]
-    //     arr1=[]
-    //     return values
-    //     }
+// Might extract the code for generating tables to another function
 
     valueExtractor = (input) => {
         let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
@@ -55,5 +41,4 @@ class App {
             }
             return returnArr
         }
-
     }
