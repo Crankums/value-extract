@@ -9,9 +9,9 @@ Using the Value Extractor.
 4) Paste the copied Update Data into the text box. Do not add anything else or manipulate the contents in any way. The script is very specific to taking an entire block of update data.
 5) Click submit. The data should be returned in a table format. 
 7) For large returns (2000+), use the following steps to copy the data into an Excel spreadsheet.
-    -Copy the returned table
-    -Paste into a column of your choice (start at row 2 if you want to use a header.)
-    -Using “Format Cells”, select “Number” and set “Decimal Places” to 0. This is to avoid the `1 e+` occurrence of large numbers in spreadsheets.
+    1) Copy the returned table
+    2) Paste into a column of your choice (start at row 2 if you want to use a header.)
+    3) Using “Format Cells”, select “Number” and set “Decimal Places” to 0. This is to avoid the `1 e+` occurrence of large numbers in spreadsheets.
 8) For smaller returns, you should be able to paste directly into either Google Sheets or Excel. Google Sheets will require you to paste-plaintext or “Paste Values Only” as normal pasting will put the entire table in a single string in a single cell.
 
 Notes: 
