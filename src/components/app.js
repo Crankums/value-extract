@@ -30,7 +30,6 @@ class App {
         }
         this.mainContainer.appendChild(valueTable)
     }
-// Might extract the code for generating tables to another function
 
     valueExtractor = (input) => {
         let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
