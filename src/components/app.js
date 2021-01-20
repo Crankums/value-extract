@@ -31,13 +31,28 @@ class App {
         this.mainContainer.appendChild(valueTable)
     }
 
+
     valueExtractor = (input) => {
-        let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
-        stringBlob = stringBlob.split('},').map(e => e.endsWith(']') ? e+"}" : e).map(JSON.parse)
-        let returnArr = []
-        for (let el in stringBlob){
-                returnArr.push(stringBlob[el]['__pk'][1])
-            }
-            return returnArr
+        input = input.replace(/'/g, '"').split("{").map(e => '{'+e.replace(/}, /g, '}'))
+        let objParse = []
+        for (let i = 1; i < input.length; i++) {
+          objParse.push(JSON.parse(input[i]))
         }
-    }
+        return objParse.map(el => el['__pk'][1])
+// Commented out for refactor
+        // let values = []
+        // for (let el in objParse) {
+        //   values.push(objParse[el]['__pk'][1])
+        // }
+        // return values
+      }
+    // valueExtractor = (input) => {
+    //     let stringBlob = input.split("u'").join("'").replace(/'/g, '"')
+    //     stringBlob = stringBlob.split('},').map(e => e.endsWith(']') ? e+"}" : e).map(JSON.parse)
+    //     let returnArr = []
+    //     for (let el in stringBlob){
+    //             returnArr.push(stringBlob[el]['__pk'][1])
+    //         }
+    //     return returnArr
+    // }
+}
