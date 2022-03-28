@@ -23,8 +23,8 @@ Notes:
 
 -The returned data is not saved in any way, so saving the Update Data and the returned update IDs is up to you. 
 
-v 0.2.0: changed output to table format for easier copying to Loader
-v 0.2.1: refactored `valueExtractor()` function to accomodate change in input
+-v 0.2.0: changed output to table format for easier copying to Loader
+-v 0.2.1: refactored `valueExtractor()` function to accomodate change in input
     -input string originally had `u` artifacts, which were an older Python element, indicating the item was a Unicode string. They are no longer necessary since DSAdmin updated. 
     -Parsing out the series of dictionaries creates a empty string at index 0, so it was necessary to skip the first element of the resulting list to properly execute JSON parsing on the other elements.
-v 0.2.2: extracts table data population from `handleSubmit()` function.
+-v 0.2.2: extracts table data population from `handleSubmit()` function.
